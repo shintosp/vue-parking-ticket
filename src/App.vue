@@ -1,10 +1,14 @@
 <template>
   <div id="app">
+    <img alt="Vue logo" class="brand" src="./assets/logo.png">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/ticket-list">List of Active Tickets</router-link> |
+      <router-link to="/set-total-slots">Set Total Slots</router-link>
     </div>
-    <router-view/>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -16,7 +20,14 @@
   text-align: center;
   color: #2c3e50;
 }
-
+.brand {
+  max-width: 60px;
+  transform: rotateX(180deg);
+}
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
 #nav {
   padding: 30px;
 

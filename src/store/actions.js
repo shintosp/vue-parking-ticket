@@ -4,5 +4,8 @@ export default {
     },
     setSlots: ({ commit }, payload) => {
         commit('createSlots', payload)
+    },
+    deleteTicket: ({ commit }, payload) => {
+        commit('clearSlot', payload)
     }
 }

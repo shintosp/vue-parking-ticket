@@ -1,8 +1,8 @@
 export default {
-    totalSlots: 100,
+    totalSlots: 10,
     tickets: [
         {
-            slotNo: 0,
+            slotNo: 1,
             carNo: 'KA-04-JM-1316',
             carColor: 'black',
             isavailable: false

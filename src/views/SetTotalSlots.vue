@@ -2,7 +2,7 @@
   <div class="set-total-slots">
     <h1>Set Total Number of Slots</h1>
     <input type="text" v-model="totalSlots" />
-    <button @click="setTotalslots">Set</button>
+    <button class="btn" @click="setTotalslots">Set</button>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: 'SetTotalSlots',
   data () {
     return {
-      totalSlots: 100
+      totalSlots: this.$store.state.totalSlots
     }
   },
   methods: {
@@ -22,7 +22,14 @@ export default {
     ]),
     setTotalslots: function () {
         const payload = this.totalSlots
-        this.setSlots(payload)
+        this.setSlots(payload).then(() => {
+          this.totalSlots = this.slotsFromStore
+        })
+    }
+  },
+  computed: {
+    slotsFromStore () {
+      return this.$store.state.totalSlots
     }
   }
   // updated: {
